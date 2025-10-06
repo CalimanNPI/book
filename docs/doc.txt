@@ -1,0 +1,12 @@
+✅ Soporte múltiples formatos: EPUB, PDF, MOBI, TXT, (CBZ, CBR)
+✅ Interfaz responsive: Funciona en web, desktop y móvil
+✅ Gestión de biblioteca: Subida y organización de ebooks
+✅ Navegación: Controles de página anterior/siguiente
+✅ Almacenamiento local: Los ebooks se guardan localmente
+✅ Marcadores y anotaciones
+✅ Modo noche/lectura
+✅ Búsqueda de texto
+✅ Configuración de fuente y espaciado
+✅ Text-to-speech
+✅ Coneccion a servidor
+✅ Sincronización con la nube (Google Drive, Dropbox) (Opcional)
