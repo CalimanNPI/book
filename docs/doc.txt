@@ -2,11 +2,13 @@
 ✅ Interfaz responsive: Funciona en web, desktop y móvil
 ✅ Gestión de biblioteca: Subida y organización de ebooks
 ✅ Navegación: Controles de página anterior/siguiente
-✅ Almacenamiento local: Los ebooks se guardan localmente
+✅ Arrastre y suelte archivos o carpetas 
+✅ Almacenamiento local: Los ebooks se guardan localmente, escaneo, 
+✅ Recuperar metadatos automáticamente 
 ✅ Marcadores y anotaciones
 ✅ Modo noche/lectura
 ✅ Búsqueda de texto
 ✅ Configuración de fuente y espaciado
 ✅ Text-to-speech
-✅ Coneccion a servidor
+✅ Coneccion a servidor, login y usuarios
 ✅ Sincronización con la nube (Google Drive, Dropbox) (Opcional)
