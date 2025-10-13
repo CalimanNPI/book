@@ -12,3 +12,100 @@
 ✅ Text-to-speech
 ✅ Coneccion a servidor, login y usuarios
 ✅ Sincronización con la nube (Google Drive, Dropbox) (Opcional)
+
+
+🎯 FASE 1: CORE & BIBLIOTECA
+Sprint 1.1 - Gestión Básica de Archivos
+- [ ] Sistema de subida de archivos individuales
+- [ ] Detección de formatos soportados (EPUB, PDF, MOBI, TXT, CBZ, CBR)
+- [ ] Validación de tipos de archivo
+- [ ] Mensajes de error para formatos no soportados
+Sprint 1.2 - Drag & Drop
+- [ ] Implementar zona de drop con feedback visual
+- [ ] Procesamiento de archivos arrastrados
+- [ ] Soporte para carpetas (escaneo recursivo)
+- [ ] Indicadores de progreso de carga
+Sprint 1.3 - Almacenamiento Local
+- [ ] Diseñar esquema de base de datos IndexedDB/WebSQL
+- [ ] CRUD básico para ebooks
+- [ ] Gestión de almacenamiento (límites, limpieza)
+- [ ] Backup/exportación de biblioteca
+
+
+📚 FASE 2: LECTOR BÁSICO
+Sprint 2.1 - Renderizado Múltiples Formatos
+- [ ] Integrar librería EPUB.js para EPUB
+- [ ] Visualizador PDF (PDF.js)
+- [ ] Renderizado de TXT plano
+- [ ] Visor de imágenes para CBZ/CBR
+- [ ] Fallbacks para formatos no soportados
+Sprint 2.2 - Navegación Básica
+- [ ] Controles anterior/siguiente página
+- [ ] Barra de progreso de lectura
+- [ ] Salto a página específica
+- [ ] Detección de fin de capítulo/libro
+
+
+🎨 FASE 3: INTERFAZ & UX
+Sprint 3.1 - Responsive Design
+- [ ] Layout mobile-first
+- [ ] Breakpoints para tablet/desktop
+- [ ] Menú hamburguesa para móviles
+- [ ] Reorganización de controles por dispositivo
+Sprint 3.2 - Modos de Visualización
+- [ ] Toggle modo noche/día
+- [ ] Selector de familias de fuentes
+- [ ] Control de tamaño de fuente
+- [ ] Ajustes de interlineado y márgenes
+
+
+🔍 FASE 4: METADATOS & BÚSQUEDA
+Sprint 4.1 - Metadatos Automáticos
+- [ ] Extracción de título/autor de archivos
+- [ ] Integración con APIs de libros (Google Books, OpenLibrary)
+- [ ] Descarga de portadas automáticas
+- [ ] Gestión de metadatos manuales
+Sprint 4.2 - Sistema de Búsqueda
+- [ ] Búsqueda en texto completo (lunr.js o similar)
+- [ ] Búsqueda en metadatos (título, autor, etc.)
+- [ ] Filtros y ordenación
+- [ ] Historial de búsquedas
+
+
+📖 FASE 5: LECTOR AVANZADO
+Sprint 5.1 - Marcadores
+- [ ] Añadir/eliminar marcadores
+- [ ] Lista de marcadores por libro
+- [ ] Navegación rápida entre marcadores
+- [ ] Sincronización entre dispositivos
+Sprint 5.2 - Anotaciones
+- [ ] Resaltado de texto
+- [ ] Notas asociadas a pasajes
+- [ ] Edición de anotaciones
+- [ ] Exportación de anotaciones
+
+
+⚙️ FASE 6: OPTIMIZACIÓN & EXTRAS
+Sprint 6.1 - Organización Biblioteca
+- [ ] Sistema de etiquetas/categorías
+- [ ] Vista de estanterías
+- [ ] Estadísticas de lectura
+- [ ] Recomendaciones basadas en lectura
+Sprint 6.2 - Performance
+- [ ] Lazy loading de libros
+- [ ] Cache de recursos
+- [ ] Optimización para grandes bibliotecas
+- [ ] Tests de rendimiento
+
+
+🚀 FASE 7: POLISH & DEPLOY
+Sprint 7.1 - UX Final
+- [ ] Loading states y skeletons
+- [ ] Mensajes de empty states
+- [ ] Tutorial/onboarding
+- [ ] Accesibilidad (ARIA, keyboard nav)
+Sprint 7.2 - Deployment
+- [ ] Build de producción
+- [ ] PWA (service worker, manifest)
+- [ ] Testing cross-browser
+- [ ] Documentación

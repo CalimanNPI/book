@@ -11,7 +11,8 @@
   },
   "scripts": {
     "dev:frontend": "npm run dev --prefix frontend",
-    "dev:backend": "nodemon backend/app.js"
+    "dev:backend": "nodemon backend/app.js",
+    "dev:back": "node --watch backend/app.js"
   },
   "dependencies": {
     "adm-zip": "^0.5.16",
@@ -19,12 +20,14 @@
     "epubjs": "^0.3.93",
     "express": "^5.1.0",
     "jimp": "^1.6.0",
+    "lunr": "^2.3.9",
     "multer": "^2.0.2",
     "pdf-parse": "^2.1.7",
     "pdfjs-dist": "^5.4.296",
     "sequelize": "^6.37.7",
     "sharp": "^0.34.4",
     "sqlite3": "^5.1.7",
+    "tesseract.js": "^5.0.4",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
