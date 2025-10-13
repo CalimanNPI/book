@@ -14,7 +14,7 @@ class ComicService {
         if (this.extension === '.cbz') {
             const zip = new AdmZip(this.filePath);
             const entries = zip.getEntries();
-            
+
             return entries
                 .filter(entry => {
                     const ext = path.extname(entry.entryName).toLowerCase();
@@ -34,8 +34,16 @@ class ComicService {
             .resize(maxWidth)
             .jpeg({ quality: 80 })
             .toBuffer();
-            
+
         return `data:image/jpeg;base64,${buffer.toString('base64')}`;
+    }
+
+    async getCover() {
+        const pages = await this.getPages();
+        if (pages.length > 0) {
+            return this.getPageAsBase64(pages[0].data);
+        }   
+        return null;
     }
 }
 

@@ -1,5 +1,5 @@
 ✅ Soporte múltiples formatos: EPUB, PDF, MOBI, TXT, (CBZ, CBR)
-✅ Interfaz responsive: Funciona en web, desktop y móvil
+✅ Interfaz responsive: Funciona en web (desktop y móvil)
 ✅ Gestión de biblioteca: Subida y organización de ebooks
 ✅ Navegación: Controles de página anterior/siguiente
 ✅ Arrastre y suelte archivos o carpetas 

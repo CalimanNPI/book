@@ -27,6 +27,13 @@ class PdfService {
         });
         return data.text;
     }
+    
+    async getCover() {
+        // Los PDFs no tienen una "portada" estándar, pero podríamos devolver la primera página como imagen
+        const dataBuffer = fs.readFileSync(this.filePath);
+        const data = await pdf(dataBuffer);
+        return data.text.split('\n').slice(0, 10).join(' '); // Primeras 10 líneas como "portada"
+    }
 }
 
 module.exports = PdfService;

@@ -2,6 +2,11 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
+const ApiRouter = require("./routes/index");
+
+// Initializations  
+const apiRouter = new ApiRouter();
+
 const app = express();
 
 // Middleware
@@ -14,7 +19,7 @@ app.use(express.json());
 app.set("port", process.env.PORT || 3001);
 
 //routes
-app.use(require("./routes/index"));
+app.use('/api', apiRouter.router);
 
 console.log("object");
 
