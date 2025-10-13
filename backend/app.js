@@ -2,7 +2,9 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
+require('./models/index');
 const ApiRouter = require("./routes/index");
+const userRoutes = require('./routes/userRoutes');
 
 // Initializations  
 const apiRouter = new ApiRouter();
@@ -19,9 +21,12 @@ app.use(express.json());
 app.set("port", process.env.PORT || 3001);
 
 //routes
-app.use('/api', apiRouter.router);
+app.use('/users', userRoutes);
 
-console.log("object");
+
+require('./config/database');
+
+
 
 app.listen(app.get("port"), () => {
   console.log(`Servidor corriendo en http://localhost:${app.get("port")}`);
