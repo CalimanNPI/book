@@ -12,12 +12,14 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //setting
 app.set("port", process.env.PORT || 3001);
 
 //routes
 app.use('/users', userRoutes);
+app.use('/uploads', require('./routes/uploadRoutes'));
 
 require('./config/database');
 

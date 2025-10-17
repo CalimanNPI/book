@@ -1,15 +1,65 @@
 
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
 
 class FileReader {
-    // Función para escanear archivos en una carpeta
-    async escanearArchivos(carpetaPath) {
-        try {
-            const archivos = await fs.readdir(carpetaPath);
-            const resultado = [];
+    async uploadFile(req, res) {
+        const upload = multer({ dest: 'uploads/' }).single('file');
+        upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json({ error: err.message });
+            } else if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.status(200).json({ message: 'File uploaded successfully', file: req.file });
+        });
+    }
 
-            for (const archivo of archivos) {
-                const archivoPath = path.join(carpetaPath, archivo);
-                const stats = await fs.stat(archivoPath);
+    async savePath(req, res) {
+        const { newPath } = req.body;
+        if (!newPath) {
+            return res.status(400).json({ error: 'Path is required' });
+        }
+        // Here you would typically save the path to a database or configuration file
+        res.status(200).json({ message: 'Path saved successfully', path: newPath });
+    }
+
+    async getPaths(req, res) {
+        // Example: Return a list of predefined paths
+        const paths = [
+            path.join(__dirname, '../uploads'),
+            path.join(__dirname, '../documents')
+        ];
+        res.status(200).json({ paths });
+    }
+
+    async checkPathExists(req, res) {
+        const { checkPath } = req.body; // Expecting { "checkPath": "/some/path" }
+        if (!checkPath) {
+            return res.status(400).json({ error: 'Path is required' });
+        }
+        fs.access(checkPath, fs.constants.F_OK, (err) => {
+            if (err) {
+                return res.status(404).json({ exists: false });
+            }
+            res.status(200).json({ exists: true });
+        });
+    }
+
+    async scanDirectory(req, res) {
+        const { directoryPath } = req.body;
+        if (!directoryPath) {
+            return res.status(400).json({ error: 'Directory path is required' });
+        }
+        
+        try {
+            const files = await fs.readdir(directoryPath);
+            const result = [];
+
+            for (const file of files) {
+                const filePath = path.join(directoryPath, file);
+                const stats = await fs.stat(filePath);
 
                 resultado.push({
                     nombre: archivo,
@@ -28,7 +78,6 @@ class FileReader {
         }
     }
 
-
     // Procesador de ebooks
     async processEbook(filePath, extension) {
         switch (extension.toLowerCase()) {
@@ -40,6 +89,8 @@ class FileReader {
                 return await processMOBI(filePath);
             case '.txt':
                 return await processTXT(filePath);
+            case '.cbz':
+                return await processCBZ(filePath);
             default:
                 throw new Error('Formato no soportado');
         }
@@ -87,3 +138,4 @@ class FileReader {
 
 
 module.exports = FileReader;
+

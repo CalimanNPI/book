@@ -16,10 +16,10 @@
 
 🎯 FASE 1: CORE & BIBLIOTECA
 Sprint 1.1 - Gestión Básica de Archivos
-- [ ] Sistema de subida de archivos individuales
-- [ ] Detección de formatos soportados (EPUB, PDF, MOBI, TXT, CBZ, CBR)
-- [ ] Validación de tipos de archivo
-- [ ] Mensajes de error para formatos no soportados
+- [ ✅ ] Sistema de subida de archivos individuales
+- [ ✅ ] Detección de formatos soportados (EPUB, PDF, MOBI, TXT, CBZ, CBR)
+- [ ✅ ] Validación de tipos de archivo
+- [ ✅ ] Mensajes de error para formatos no soportados
 Sprint 1.2 - Drag & Drop
 - [ ] Implementar zona de drop con feedback visual
 - [ ] Procesamiento de archivos arrastrados
