@@ -16,7 +16,7 @@ const Book = sequelize.define('Book', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Authors',
+            model: 'authors',
             key: 'id'
         }
     },

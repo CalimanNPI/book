@@ -64,10 +64,15 @@ class BookController {
         }
     }
 
-    async getBooksByAuthor(req, res) {
+    // Obtener autor del libro
+    async getBookAuthor(req, res) {
         try {
-            const books = await Book.findAll({ where: { authorId: req.params.authorId } });
-            res.json(books);
+            const book = await Book.findByPk(req.params.id);
+            if (!book) {
+                return res.status(404).json({ error: 'Libro no encontrado' });
+            }
+            const author = await book.getAuthor();
+            res.json(author);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }

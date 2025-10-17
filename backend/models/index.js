@@ -14,7 +14,7 @@ const models = {
 };
 
 // Sincronizar modelos con la base de datos
-sequelize.sync({ force: true }) // force: true elimina y recrea las tablas
+sequelize.sync({ force: false }) // force: true elimina y recrea las tablas
     .then(() => console.log('Base de datos sincronizada'))
     .catch(err => console.error('Error sincronizando BD:', err));
 

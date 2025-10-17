@@ -13,7 +13,7 @@ const ReadingProgress = sequelize.define('ReadingProgress', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Users',
+            model: 'users',
             key: 'id'
         }
     },
@@ -21,7 +21,7 @@ const ReadingProgress = sequelize.define('ReadingProgress', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Books',
+            model: 'books',
             key: 'id'
         }
     },
@@ -33,7 +33,7 @@ const ReadingProgress = sequelize.define('ReadingProgress', {
         allowNull: true,
     },
 }, {
-    tableName: 'ReadingProgress',
+    tableName: 'reading_progress',
     timestamps: true
 });
 

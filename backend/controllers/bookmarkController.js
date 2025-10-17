@@ -2,6 +2,8 @@ const { Bookmark } = require('../models');
 
 // Create a new bookmark
 class BookmarkController {
+    
+    // create a new bookmark
     static async createBookmark(req, res) {
         try {
             const { userId, bookId, page, note, color } = req.body;

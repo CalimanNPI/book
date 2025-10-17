@@ -65,6 +65,7 @@ class AuthorController {
         }
     }
 
+    // Obtener libros del autor
     async getAuthorBooks(req, res) {
         try {
             const author = await Author.findByPk(req.params.id, { include: 'books' });

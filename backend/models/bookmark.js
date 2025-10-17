@@ -1,4 +1,4 @@
-const { DataTypes, col } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Book = require('./book');
 const User = require('./user');
@@ -13,7 +13,7 @@ const Bookmark = sequelize.define('Bookmark', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Users',
+            model: 'users',
             key: 'id'
         }
     },
@@ -21,7 +21,7 @@ const Bookmark = sequelize.define('Bookmark', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Books',
+            model: 'books',
             key: 'id'
         }
     },
@@ -40,7 +40,7 @@ const Bookmark = sequelize.define('Bookmark', {
         allowNull: false,
     }
 }, {
-    tableName: 'Bookmarks',
+    tableName: 'bookmarks',
     timestamps: true
 });
 

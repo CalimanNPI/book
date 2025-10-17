@@ -38,7 +38,7 @@ const Author = sequelize.define('Author', {
         allowNull: true
     },
 }, {
-    tableName: 'Authors',
+    tableName: 'authors',
     timestamps: true
 });
 

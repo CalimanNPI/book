@@ -16,10 +16,12 @@
   },
   "dependencies": {
     "adm-zip": "^0.5.16",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "epubjs": "^0.3.93",
     "express": "^5.1.0",
     "jimp": "^1.6.0",
+    "jsonwebtoken": "^9.0.2",
     "lunr": "^2.3.9",
     "multer": "^2.0.2",
     "pdf-parse": "^2.1.7",
