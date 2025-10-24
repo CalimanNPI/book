@@ -1,4 +1,4 @@
-const { Author } = require('../models');
+const { Author, Book } = require('../models');
 
 class AuthorController {
     // Obtener todos los autores
@@ -76,6 +76,25 @@ class AuthorController {
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
+    }
+
+
+    async saveAutorBooks(data) {
+        Author.findOrCreate({
+            where: { name: data.author || 'Unknown Author' },
+            defaults: { name: data.author || 'Unknown Author' }
+
+        }).then(([author, created]) => {
+            console.log(`Author: ${author.name} (${created ? 'Created' : 'Found'})`);
+
+            Book.create({
+                title: data.title || 'Unknown Title',
+                authorId: author.id, // Link to actual author
+                format: data.extension.replace('.', '') || 'epub',
+                metadata: data.metadata,
+                file: data.fullPath,
+            });
+        });
     }
 }
 module.exports = new AuthorController();

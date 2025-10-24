@@ -51,3 +51,4 @@ Author.hasMany(Book, { foreignKey: 'authorId' });
 Book.belongsTo(Author, { foreignKey: 'authorId' });
 
 module.exports = Book;
+

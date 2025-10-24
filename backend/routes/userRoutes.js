@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
+const bookController = require('../controllers/BookController');
 // const bookController = require('../controllers/bookController');
 // const authorController = require('../controllers/authorController');
 // const bookmarkController = require('../controllers/bookmarkController');
@@ -9,11 +10,14 @@ const userController = require('../controllers/userController');
 
 
 // CRUD routes
-router.get('/', userController.getAllUsers);
-router.get('/:id', userController.getUserById);
-router.post('/', userController.createUser);
-router.put('/:id', userController.updateUser);
-router.delete('/:id', userController.deleteUser);
+//router.get('/', userController.getAllUsers);
+//router.get('/:id', userController.getUserById);
+//router.post('/', userController.createUser);
+//router.put('/:id', userController.updateUser);
+//router.delete('/:id', userController.deleteUser);
+
+
+router.get('/books-all', bookController.getAllBooks);
 
 
 module.exports = router;

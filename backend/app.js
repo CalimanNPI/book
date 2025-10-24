@@ -23,6 +23,12 @@ app.use('/uploads', require('./routes/uploadRoutes'));
 
 require('./config/database');
 
+// new code to scan directory
+const { scanDirectory } = require('./services/scaneer');
+const extensions = ['.epub', '.pdf', '.cbz', '.mobi', '.txt'];
+const dirPath = 'C:/Users/Franco/Documents/Biblioteca';
+const files = scanDirectory(dirPath, extensions);
+
 app.listen(app.get("port"), () => {
   console.log(`Servidor corriendo en http://localhost:${app.get("port")}`);
 });
