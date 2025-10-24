@@ -1,5 +1,7 @@
 const Colleaction = require('../models/Collection');
 
+d
+
 class CollectionController {
     // Obtener todas las colecciones
     async getAllCollections(req, res) {

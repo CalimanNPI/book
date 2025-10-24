@@ -1,7 +1,7 @@
 
-const uploadController = {
+class uploadController {
     // Subir archivo único
-    uploadSingle: async (req, res) => {
+    async uploadSingle(req, res) {
         try {
             if (!req.file) {
                 return res.status(400).json({
@@ -24,10 +24,10 @@ const uploadController = {
                 message: 'Error al subir el archivo'
             });
         }
-    },
+    }
 
     // Subir múltiples archivos
-    uploadMultiple: async (req, res) => {
+    async uploadMultiple(req, res) {
         try {
             if (!req.files || req.files.length === 0) {
                 return res.status(400).json({
@@ -51,10 +51,10 @@ const uploadController = {
                 message: 'Error al subir los archivos'
             });
         }
-    },
+    }
 
     // Subir diferentes tipos de archivos
-    uploadFields: async (req, res) => {
+    async uploadFields(req, res) {
         try {
             const result = {};
 
@@ -72,10 +72,10 @@ const uploadController = {
                 message: 'Error al subir los archivos'
             });
         }
-    },
+    }
 
     // Listar archivos
-    listFiles: async (req, res) => {
+    async listFiles(req, res) {
         try {
             const files = await fileModel.listFiles();
             res.json({
@@ -89,10 +89,10 @@ const uploadController = {
                 message: 'Error al listar archivos'
             });
         }
-    },
+    }
 
     // Descargar archivo
-    downloadFile: async (req, res) => {
+    async downloadFile(req, res) {
         try {
             const { filename } = req.params;
             const fileInfo = await fileModel.getFileInfo(filename);
@@ -112,10 +112,10 @@ const uploadController = {
                 message: 'Error al descargar el archivo'
             });
         }
-    },
+    }
 
     // Eliminar archivo
-    deleteFile: async (req, res) => {
+    async deleteFile(req, res) {
         try {
             const { filename } = req.params;
             const success = await fileModel.deleteFile(filename);
@@ -139,6 +139,7 @@ const uploadController = {
             });
         }
     }
-};
 
-module.exports = uploadController;
+}
+
+module.exports = new uploadController();

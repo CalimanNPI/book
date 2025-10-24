@@ -2,7 +2,7 @@ const { ReadingProgress } = require('../models');
 
 class ReadingProgressController {
     // Métodos del controlador (crear, obtener, actualizar, eliminar)
-    static async createReadingProgress(req, res) {
+    async createReadingProgress(req, res) {
         try {
             const { userId, bookId, progress, totalPages } = req.body;
             const newProgress = await ReadingProgress.create({ userId, bookId, progress, totalPages });
@@ -12,7 +12,7 @@ class ReadingProgressController {
         }
     }
 
-    static async getReadingProgress(req, res) {
+    async getReadingProgress(req, res) {
         try {
             const { userId, bookId } = req.params;
             const progress = await ReadingProgress.findOne({ where: { userId, bookId } });
@@ -27,7 +27,7 @@ class ReadingProgressController {
 
     }
 
-    static async updateReadingProgress(req, res) {
+    async updateReadingProgress(req, res) {
         try {
             const { userId, bookId } = req.params;
             const { progress } = req.body;
@@ -45,3 +45,5 @@ class ReadingProgressController {
         }
     }
 }
+
+module.exports = new ReadingProgressController();

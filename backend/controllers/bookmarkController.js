@@ -2,9 +2,9 @@ const { Bookmark } = require('../models');
 
 // Create a new bookmark
 class BookmarkController {
-    
+
     // create a new bookmark
-    static async createBookmark(req, res) {
+    async createBookmark(req, res) {
         try {
             const { userId, bookId, page, note, color } = req.body;
             const newBookmark = await Bookmark.create({ userId, bookId, page, note, color });
@@ -16,7 +16,7 @@ class BookmarkController {
     }
 
     // Get all bookmarks for a user
-    static async getUserBookmarksByBook(req, res) {
+    async getUserBookmarksByBook(req, res) {
         try {
             const { userId, bookId } = req.params;
             const bookmarks = await Bookmark.findAll({ where: { userId, bookId } });
@@ -28,7 +28,7 @@ class BookmarkController {
     }
 
     // Delete a bookmark
-    static async deleteBookmark(req, res) {
+    async deleteBookmark(req, res) {
         try {
             const { id } = req.params;
             const deleted = await Bookmark.destroy({ where: { id } });
