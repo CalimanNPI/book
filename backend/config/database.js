@@ -28,6 +28,7 @@ sequelize.query("PRAGMA journal_mode = WAL;");
 
 // Habilitar claves foráneas
 sequelize.query("PRAGMA foreign_keys = ON;");
+
 try {
   sequelize.authenticate();
   console.log("Connection has been established successfully.");
