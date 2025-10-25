@@ -15,10 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.set("port", process.env.PORT || 3000);
 
 //routes
-app.use('/users', require('./routes/userRoutes'));
-app.use('/uploads', require('./routes/uploadRoutes'));
-app.use('/books', require('./routes/bookRoutes'));
-app.use('/auth', require('./routes/authRoutes'));
+app.use('/api', require('./routes/userRoutes'));
+app.use('/api', require('./routes/uploadRoutes'));
+app.use('/api', require('./routes/bookRoutes'));
+app.use('/api', require('./routes/authRoutes'));
 
 app.listen(app.get("port"), () => {
   console.log(`Servidor corriendo en http://localhost:${app.get("port")}`);
