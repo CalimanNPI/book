@@ -1,16 +1,19 @@
 const sequelize = require('../config/database');
+
 const User = require('./user');
 const Book = require('./book');
 const Author = require('./author');
 const Bookmark = require('./bookmark');
 const ReadingProgress = require('./readingProgress');
+const Collection = require('./collection');
 
 const models = {
     User,
     Book,
     Author,
     Bookmark,
-    ReadingProgress
+    ReadingProgress,
+    Collection
 };
 
 // Sincronizar modelos con la base de datos

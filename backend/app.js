@@ -1,10 +1,7 @@
 const express = require("express");
-const path = require("path");
 const cors = require("cors");
 
 require('./models/index');
-
-const userRoutes = require('./routes/userRoutes');
 
 // Initializations  
 const app = express();
@@ -15,14 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //setting
-app.set("port", process.env.PORT || 3001);
+app.set("port", process.env.PORT || 3000);
 
 //routes
-app.use('/users', userRoutes);
+app.use('/users', require('./routes/userRoutes'));
 app.use('/uploads', require('./routes/uploadRoutes'));
-
-require('./config/database');
+app.use('/books', require('./routes/bookRoutes'));
+app.use('/auth', require('./routes/authRoutes'));
 
 app.listen(app.get("port"), () => {
   console.log(`Servidor corriendo en http://localhost:${app.get("port")}`);
-});
+}); 

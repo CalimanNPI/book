@@ -14,7 +14,7 @@ class EpubService {
         const containerXml = this.zip.readAsText('META-INF/container.xml');
         const parser = new xml2js.Parser();
         const container = await parser.parseStringPromise(containerXml);
-        
+         
         const opfPath = container.container.rootfiles[0].rootfile[0].$['full-path'];
         const opfContent = this.zip.readAsText(opfPath);
         const opf = await parser.parseStringPromise(opfContent);
